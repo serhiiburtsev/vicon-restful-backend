@@ -1,10 +1,14 @@
 package com.n0976190100.vicomapi.repo.model;
 
+import lombok.Data;
+
 /**
  * Represents a minimal unit, a span of time, available for booking.
  * Contains position in a schedule.
  */
-public class BookingTimeSpan {
+@Data
+public class ScheduleUnit {
+
 
     /**
      * Can be a day of the year
@@ -17,4 +21,11 @@ public class BookingTimeSpan {
      * several (10?) spans in a day, then y values are in [0; 9]
      */
     Integer y;
+
+    Boolean isFirst;
+
+    Integer roomId;
+
+    Integer conferenceId;
+
 }

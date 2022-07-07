@@ -19,4 +19,19 @@ public class ConferenceController implements ConferenceApi {
 
         return ResponseEntity.ok(result);
     }
+
+    @Override
+    public ResponseEntity<Conference> getConference() {
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<Conference> cancelConference() {
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<Conference> deleteConference() {
+        return null;
+    }
 }

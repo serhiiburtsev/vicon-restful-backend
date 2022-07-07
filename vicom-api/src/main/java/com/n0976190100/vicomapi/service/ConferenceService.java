@@ -1,30 +1,33 @@
 package com.n0976190100.vicomapi.service;
 
 import com.n0976190100.vicomapi.repo.model.Conference;
-import com.n0976190100.vicomapi.repo.model.Participant;
 import com.n0976190100.vicomapi.repo.model.Room;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-
+@Service
+@RequiredArgsConstructor
 public class ConferenceService {
 
     /**
      * Creates Conference with desirable capacity (max number of participants) and
-     * date/time
-     *
+     * duration.
      * @param capacity
-     * @param timeSpan
+     * @param scheduleUnits
+     * @param numberOfhours
      * @return
      */
-    public Conference createConference(Integer capacity, LocalDateTime timeSpan, Integer numberOfhours){
+    public Conference createConference(Integer capacity, Integer scheduleUnits, Integer numberOfhours){
 
-        // check room availability by schedule and capacity OR just get available room??
-        // book the room
+        Room room = getAvailableRoom(capacity, scheduleUnits);
 
-        return new Conference(new Participant(), new Room(), capacity);
+        return new Conference(room, capacity, scheduleUnits);
     }
 
+    private Room getAvailableRoom(Integer capacity, Integer scheduleUnits) {
+        // check room availability by schedule and capacity OR just get available room??
+        return null;
+    }
 
-    // crea
 
 }

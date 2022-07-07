@@ -4,20 +4,22 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-import java.util.List;
+import java.util.AbstractQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Conference {
 
-    public Conference(Participant owner, Room room, Integer capacity){
-        // create List<Participant> participants with capacity
-
+    public Conference(Room room, Integer capacity, Integer scheduleUnits){
+        this.participants = new LinkedBlockingQueue<>(capacity);
+        this.room = room;
+        this.scheduleUnits = scheduleUnits;
     }
 
-    Participant owner;
     Room room;
-    Integer units;
-    List<Participant> participants;
+    Integer scheduleUnits;
+    AbstractQueue<Participant> participants;
+    Boolean isCancelled;
 
 }
