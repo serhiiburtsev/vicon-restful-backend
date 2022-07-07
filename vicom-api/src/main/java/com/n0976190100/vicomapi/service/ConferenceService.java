@@ -1,7 +1,7 @@
 package com.n0976190100.vicomapi.service;
 
-import com.n0976190100.vicomapi.repo.model.Conference;
-import com.n0976190100.vicomapi.repo.model.Room;
+import com.n0976190100.vicomcore.repo.model.Conference;
+import com.n0976190100.vicomcore.repo.model.Room;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,7 @@ public class ConferenceService {
 
         Room room = getAvailableRoom(capacity, scheduleUnits);
 
-        return new Conference(room, capacity, scheduleUnits);
+        return new Conference(room.getId(), capacity, scheduleUnits);
     }
 
     private Room getAvailableRoom(Integer capacity, Integer scheduleUnits) {

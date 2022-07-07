@@ -1,6 +1,6 @@
 package com.n0976190100.vicomapi;
 
-import com.n0976190100.vicomapi.repo.model.Conference;
+import com.n0976190100.vicomcore.repo.model.Conference;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

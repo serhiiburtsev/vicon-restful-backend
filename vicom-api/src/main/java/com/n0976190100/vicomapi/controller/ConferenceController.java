@@ -1,8 +1,8 @@
 package com.n0976190100.vicomapi.controller;
 
 import com.n0976190100.vicomapi.ConferenceApi;
-import com.n0976190100.vicomapi.repo.model.Conference;
 import com.n0976190100.vicomapi.service.ConferenceService;
+import com.n0976190100.vicomcore.repo.model.Conference;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;

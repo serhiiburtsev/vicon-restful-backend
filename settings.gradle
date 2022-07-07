@@ -1,1 +1,2 @@
 rootProject.name = 'vicom'
+include('vicom-api', 'vicom-core')
